@@ -2,9 +2,10 @@
 │
 ├── server.js
 ├── package.json
+└── views
+    ├── index.ejs
+    └── login.ejs
 └── public
-    ├── index.html
-    ├── login.html
     └── css
         └── styles.css
 
