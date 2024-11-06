@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos del Usuario</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+        }
+
+        .btn-custom {
+            background-color: #808080;
+            color: #ffffff;
+        }
+
+        .btn-custom:hover {
+            background-color: #696969;
+        }
+
+        .form-control[readonly] {
+            background-color: #e9ecef;
+        }
+
+        h1 {
+            color: #ffffff;
+        }
+
+        .navbar-custom {
+            background-color: #343a40;
+        }
+
+        .navbar-custom .navbar-brand, .navbar-custom .nav-link {
+            color: #ffffff;
+        }
+
+        .navbar-custom .nav-link:hover {
+            color: #cccccc;
+        }
+
+        .btn-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .form-row {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <a class="navbar-brand" href="#">GLOBAL GH</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto"> <!-- Aseguramos que las opciones estén a la derecha -->
+                <li class="nav-item">
+                    <a class="nav-link" href="/index">Menú</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/login">Salir</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Datos del Usuario</h1>
+        <form action="/formulario/<%= usuario.id %>" method="GET">
+            <!-- Formulario con datos solo lectura -->
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="primer_nombre">Primer Nombre</label>
+                    <input type="text" class="form-control" id="primer_nombre" name="primer_nombre" value="<%= usuario.primer_nombre %>" readonly>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="segundo_nombre">Segundo Nombre</label>
+                    <input type="text" class="form-control" id="segundo_nombre" name="segundo_nombre" value="<%= usuario.segundo_nombre %>" readonly>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="primer_apellido">Primer Apellido</label>
+                    <input type="text" class="form-control" id="primer_apellido" name="primer_apellido" value="<%= usuario.primer_apellido %>" readonly>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="segundo_apellido">Segundo Apellido</label>
+                    <input type="text" class="form-control" id="segundo_apellido" name="segundo_apellido" value="<%= usuario.segundo_apellido %>" readonly>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="telefono">Teléfono</label>
+                    <input type="text" class="form-control" id="telefono" name="telefono" value="<%= usuario.telefono %>" readonly>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="fecha_nacimiento">Fecha de Nacimiento</label>
+                    <input type="text" class="form-control" id="fechaNacimiento" value="<%= usuario.fecha_nacimiento %>" readonly>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="rh">RH</label>
+                    <input type="text" class="form-control" id="rh" name="rh" value="<%= usuario.rh %>" readonly>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="direccion">Dirección</label>
+                    <input type="text" class="form-control" id="direccion" name="direccion" value="<%= usuario.direccion %>" readonly>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="correo">Correo</label>
+                    <input type="email" class="form-control" id="correo" name="correo" value="<%= usuario.correo %>" readonly>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="ciudad">Ciudad</label>
+                    <input type="text" class="form-control" id="ciudad" name="ciudad" value="<%= usuario.ciudad %>" readonly>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="identificacion">Identificación</label>
+                    <input type="text" class="form-control" id="identificacion" name="identificacion" value="<%= usuario.identificacion %>" readonly>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="ocupacion">Ocupación</label>
+                    <input type="text" class="form-control" id="ocupacion" name="ocupacion" value="<%= usuario.ocupacion %>" readonly>
+                </div>
+            </div>
+        </form>
+        <!-- Botón centrado -->
+        <div class="btn-container">
+            <a href="/index?primer_nombre=<%= usuario.primer_nombre %>&id=<%= usuario.id %>" class="btn btn-custom mt-3">Volver al Inicio</a>
+        </div>
+    </div>
+  
+</body>
+</html>
+
+

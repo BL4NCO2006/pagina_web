@@ -4,29 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página Principal</title>
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/styles.css">
     <style>
         body {
-            background-color: #ffffff; /* Fondo blanco */
-            color: #000000; /* Todas las letras en negro */
+            background-color: #121212;
+            color: #ffffff;
         }
 
         .btn-custom {
-            background-color: #808080; /* Color gris para el botón */
-            color: #ffffff; /* Color de texto del botón en blanco para contraste */
+            background-color: #808080;
+            color: #ffffff;
         }
 
         .btn-custom:hover {
-            background-color: #696969; /* Color gris más oscuro al pasar el ratón sobre el botón */
+            background-color: #696969;
+        }
+
+        h1 {
+            color: #ffffff;
+        }
+
+        .navbar-custom {
+            background-color: #343a40;
+        }
+
+        .navbar-custom .navbar-brand, .navbar-custom .nav-link {
+            color: #ffffff;
+        }
+
+        .navbar-custom .nav-link:hover {
+            color: #cccccc;
+        }
+
+        .btn-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .nav-item {
+            margin-left: 15px;
         }
     </style>
 </head>
 <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <a class="navbar-brand" href="#">GLOBAL GH</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto"> <!-- Aseguramos que las opciones estén a la derecha -->
+                <li class="nav-item">
+                    <a class="nav-link" href="/index">Menú</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/login">Salir</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
     <div class="container text-center mt-5">
-        <h1>Bienvenido a la Página Principal</h1> <!-- Elimina la clase text-success para que el texto sea negro -->
-        <a href="/login" class="btn btn-custom mt-3">Iniciar Sesión</a>
+        <h1 class="text-success">Bienvenido, <%= primer_nombre %></h1> <!-- Bienvenida al usuario -->
+        <div class="btn-container">
+            <a href="/formulario/<%= id %>" class="btn btn-custom mt-3">Ver Datos</a>
+        </div>
     </div>
 </body>
 </html>
+
+
